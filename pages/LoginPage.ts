@@ -6,15 +6,15 @@ export class LoginPage {
     readonly passwordInput:Locator;
     readonly loginButton:Locator;
 
-    constructor(page: Page){
+    constructor(page: Page){ 
         this.page = page;
-        this.userNameInput = page.getByRole('textbox', {name: 'Username'});
-        this.passwordInput = page.getByRole('textbox', {name: 'Password'});
+        this.userNameInput = page.getByRole('textbox', { name: 'username' });
+        this.passwordInput = page.getByRole('textbox', { name: 'password' });
         this.loginButton = page.getByRole('button', { name: 'Login' });
     }
 
     async goToOrageHRM(){
-        await this.page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+        await this.page.goto(`${process.env.BASE_URL}/web/index.php/auth/login`);
     }
 
     async loginOrageHRM(user: string, password: string){
