@@ -1,0 +1,26 @@
+{
+  "name": "typescript-playwright-qa-automation-framework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test_dev": "cross-env ENV_NAME=dev npx playwright test",
+    "test_demo": "cross-env ENV_NAME=demo npx playwright test",
+    "test_demo_cr_hd": "cross-env ENV_NAME=demo npx playwright test --project=chromium --headed",
+    "test_demo_cr_hl": "cross-env ENV_NAME=demo npx playwright test --project=chromium"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/crypto-js": "^4.2.2",
+    "@types/node": "^24.3.1"
+  },
+  "dependencies": {
+    "cross-env": "^10.0.0",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^17.2.2"
+  }
+}
