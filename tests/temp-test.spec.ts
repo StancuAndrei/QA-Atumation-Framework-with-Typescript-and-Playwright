@@ -1,12 +1,18 @@
-import { test } from '../fixtures/common-fixtures';
+import { expect } from '@playwright/test';
+import { test } from '../fixtures/hooks-fixture';
 
 
-test.beforeEach('Before each hook', async({loginPage})=>{
-    await loginPage.goToOrageHRM();
-})
+// test.beforeEach('Before each hook', async({loginPage})=>{
+//     await loginPage.goToOrageHRM();
+// })
+
+// test.afterEach("After each hook", async({userPage}) => {
+//     await userPage.logout();
+// })
+
 
 //trebuie setat secret key inainte de execute, in besi avem SECRET_KEY = key npm run `ce vrei tu`
-test("temp test", async({page, loginPage, commonUtils}) => {
+test("temp test", async({page, goToUrl}) => {
 
     //console.log(process.env.BASE_URL);
 
@@ -19,4 +25,10 @@ test("temp test", async({page, loginPage, commonUtils}) => {
     //await loginPage.loginOrageHRM(decryptedUserName, decryptedPassword);
     console.log(await page.title());
 })
+
+
+test("temp test 2", async({page, goToUrl, logOut}) => {
+    await expect(page).toHaveTitle('OrangeHRM');
+})
+
 
